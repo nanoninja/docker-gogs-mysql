@@ -1,0 +1,35 @@
+version: '3.3'
+services:
+    gogsdb:
+      image: mysql
+      container_name: ${MYSQL_HOST}
+      restart: always
+      env_file:
+          - .env
+      environment:
+          - MYSQL_DATABASE=${MYSQL_DATABASE}
+          - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+          - MYSQL_USER=${MYSQL_USER}
+          - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      ports:
+          - 13306:3306
+      volumes:
+          - db-data:/var/lib/mysql
+    gogsapp:
+      image: gogs/gogs
+      restart: always
+      ports:
+        - ${GOGS_SSH_PORT}:22
+        - ${GOGS_HOST_PORT}:3000
+      environment:
+        - RUN_CROND=true
+      volumes:
+        - gogs-data:/data
+      depends_on:
+        - gogsdb
+
+volumes:
+  gogs-data:
+    driver: local
+  db-data:
+    driver: local
