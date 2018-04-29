@@ -2,18 +2,6 @@ APP_NAME = Gogs
 RUN_USER = git
 RUN_MODE = prod
 
-[database]
-DB_TYPE  = mysql
-HOST     = gogsdb:3306
-NAME     = gogs
-USER     = root
-PASSWD   = root
-SSL_MODE = disable
-PATH     = data/gogs.db
-
-[repository]
-ROOT = /data/git/gogs-repositories
-
 [server]
 PROTOCOL         = https
 DOMAIN           = localhost
@@ -25,6 +13,18 @@ START_SSH_SERVER = false
 OFFLINE_MODE     = false
 CERT_FILE        = /app/gogs/cert.pem
 KEY_FILE         = /app/gogs/key.pem
+
+[repository]
+ROOT = /data/git/gogs-repositories
+
+[database]
+DB_TYPE  = mysql
+HOST     = gogsdb:3306
+NAME     = gogs
+USER     = root
+PASSWD   = root
+SSL_MODE = disable
+PATH     = data/gogs.db
 
 ; Allowed TLS version values: SSL30, TLS10, TLS11, TLS12
 ;TLS_MIN_VERSION = TLS10
@@ -50,3 +50,7 @@ PROVIDER = file
 MODE      = file
 LEVEL     = Info
 ROOT_PATH = /app/gogs/log
+
+[other]
+SHOW_FOOTER_VERSION            = false
+SHOW_FOOTER_TEMPLATE_LOAD_TIME = false

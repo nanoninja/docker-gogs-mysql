@@ -27,12 +27,14 @@ curl --insecure -i -X POST \
  --data "http_port=3000" \
  --data "app_url=https://${HOST}" \
  --data "log_root_path=/app/gogs/log" \
+ --data "use_builtin_ssh_server=${GOGS_BUILTIN_SSH_SERVER}" \
  --data "smtp_host=${GOGS_SMTP_HOST}" \
  --data "smtp_from=${GOGS_SMTP_FROM}" \
  --data "smtp_user=${GOGS_SMTP_USER}" \
  --data "smtp_passwd=${GOGS_SMTP_PASSWD}" \
  --data "enable_federated_avatar=on" \
  --data "enable_captcha=on" \
+ --data "enable_console_mode=${GOGS_ENABLE_CONSOLE_MODE}" \
  --data "admin_name=${GOGS_ADMIN_NAME}" \
  --data "admin_passwd=${GOGS_ADMIN_PASSWD}" \
  --data "admin_confirm_passwd=${GOGS_ADMIN_PASSWD}" \
