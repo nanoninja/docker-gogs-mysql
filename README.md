@@ -1,6 +1,6 @@
-# Docker Gogs MySQL [![Build Status](https://travis-ci.org/nanoninja/docker-gogs-mysql.svg?branch=master)](https://travis-ci.org/nanoninja/docker-gogs-mysql)
+# Docker Gogs MySQL [![Build Status](https://travis-ci.org/nanoninja/docker-gogs-mysql.svg?branch=master)](https://travis-ci.org/nanoninja/docker-gogs-mysql) [![GitHub version](https://badge.fury.io/gh/nanoninja%2Fdocker-gogs-mysql.svg)](https://badge.fury.io/gh/nanoninja%2Fdocker-gogs-mysql)
 
-## [Gogs](https://gogs.io/) is a painless self-hosted Git service.
+## [Gogs](https://gogs.io/) is a painless self-hosted Git service
 
 ### Getting started
 
@@ -10,7 +10,7 @@
     git clone https://github.com/nanoninja/docker-gogs-mysql.git
     ```
 
-2. You could customize your settings before installation : 
+2. You could customize your settings before installation :
 
     Edit `.env` file
 
@@ -79,6 +79,6 @@ git config --global --unset http.sslVerify
 
 ## Images to use
 
-* [Gogs](https://hub.docker.com/r/gogs/gogs/)
-* [MySQL](https://hub.docker.com/_/mysql/)
-* [cURL](https://hub.docker.com/r/appropriate/curl/)
+- [Gogs](https://hub.docker.com/r/gogs/gogs/)
+- [MySQL](https://hub.docker.com/_/mysql/)
+- [cURL](https://hub.docker.com/r/appropriate/curl/)
